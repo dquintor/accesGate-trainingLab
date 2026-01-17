@@ -49,12 +49,19 @@ const output = document.getElementById("output");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
+  const fullName = document.getElementById("fullName").value.trim();
+  const age = Number(document.getElementById("age").value);
+  const role = document.getElementById("role").value.toLowerCase();
+  const acceptedRules = document.getElementById("acceptRules").checked;
+  const availableHours = Number(document.getElementById("hours").value);
+
+
   const user = {
-    fullName: document.getElementById("fullName").value.trim(),
-    age: Number(document.getElementById("age").value),
-    role: document.getElementById("role").value.toLowerCase(),
-    acceptedRules: document.getElementById("acceptRules").checked,
-    availableHours: Number(document.getElementById("hours").value)
+    fullName,
+    age,
+    role,
+    acceptedRules,
+    availableHours
   };
 
   console.log("User Object:", user);
